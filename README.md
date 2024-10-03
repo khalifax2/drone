@@ -8,6 +8,8 @@ git clone https://github.com/khalifax2/drone.git
 
 open folder in IDE (Intellij)
 
+Import json collection to Postman filename: THE DRONE.postman_collection.json
+
 ## Default Database Initialization
 
 When the application starts, it will automatically run the following SQL scripts to populate the `drone` and `medication` tables with default data.
@@ -16,6 +18,8 @@ When the application starts, it will automatically run the following SQL scripts
 url: http://localhost:8080/api/v1/h2-console
 
 jdbc-url: jdbc:h2:mem:dronedb
+
+
 
 ### SQL Scripts
 

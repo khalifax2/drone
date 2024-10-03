@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "c1a3cae0-0faf-48e1-a489-f9770a89d6d1",
+		"name": "THE DRONE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9947082"
+	},
+	"item": [
+		{
+			"name": "Drone Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serialNo\" : 200,\r\n    \"model\" : \"LIGHTWEIGHT\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/drone/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"drone",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Medications",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\" : \"SOLMUX\",\r\n        \"weight\" : \"20\",\r\n        \"code\" : \"MED_XYZ\",\r\n        \"imagePath\" : \"/img1\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/medication/addAll",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"medication",
+						"addAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Load Medications",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"droneId\" : \"drone-lightweight-1\",\r\n    \"medicationIds\" : [\r\n        \"id-paracetamol\",\r\n        \"id-ibuprofen\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/load/loadMedication",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"load",
+						"loadMedication"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Loaded Medication in Specific Drone",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/drone/drone-lightweight-1/loadedMedication",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"drone",
+						"drone-lightweight-1",
+						"loadedMedication"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Drone Scheduler",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/drone/scheduler?droneId=drone-lightweight-1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"drone",
+						"scheduler"
+					],
+					"query": [
+						{
+							"key": "droneId",
+							"value": "drone-lightweight-1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Drone Battery Level",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/drone/batteryInfo?droneId=drone-lightweight-1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"drone",
+						"batteryInfo"
+					],
+					"query": [
+						{
+							"key": "droneId",
+							"value": "drone-lightweight-1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Drone Availability",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/drone/availability?droneId=drone-lightweight-1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"drone",
+						"availability"
+					],
+					"query": [
+						{
+							"key": "droneId",
+							"value": "drone-lightweight-1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Medication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"MEDIC_X\",\r\n    \"weight\" : \"20\",\r\n    \"code\" : \"MED_ABC\",\r\n    \"imagePath\" : \"/img1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/medication/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"medication",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
