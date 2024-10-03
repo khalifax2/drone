@@ -226,6 +226,12 @@ Response Body: "Drone is available for loading."
 - **Description**: Starts the scheduler for the specified drone.
 - **Request Parameter**: droneId
 
+**Behaviour**:
+```aidl
+Drone States: LOADED, DELIVERING, DELIVERED, RETURNING.
+For each state, there will be a 2-second delay.
+For every successful delivery, the battery will be reduced by 50%.
+```
 **Validation**:
 ```aidl
 - Scheduler will not start if and will throw an error:
