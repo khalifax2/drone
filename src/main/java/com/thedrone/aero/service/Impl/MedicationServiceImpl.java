@@ -42,7 +42,7 @@ public class MedicationServiceImpl implements MedicationService {
 
     @Override
     public List<MedicationDto> findAllMedicationByDroneId(String droneId) {
-        List<Medication> medicationList = medicationRepository.findByDrone_DroneId(droneId);
+        List<Medication> medicationList = medicationRepository.findByDrone_DroneIdAndIsDelivered(droneId, false);
         return medicationList.stream()
                 .map(MedicationMapper::mapToMedicationDto)
                 .toList();

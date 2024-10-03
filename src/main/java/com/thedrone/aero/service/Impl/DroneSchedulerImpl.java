@@ -65,6 +65,7 @@ public class DroneSchedulerImpl implements DroneScheduler {
             case RETURNING -> {
                 drone.setState(State.IDLE);
                 drone.setBatteryCapacity(drone.getBatteryCapacity() - 50);
+                drone.getMedications().forEach(medication -> medication.setIsDelivered(true));
                 droneService.updateDrone(drone);
                 log.info("Drone state: {}", State.IDLE);
                 stopAndRemoveScheduler(drone.getDroneId());

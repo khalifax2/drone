@@ -11,6 +11,7 @@ public class MedicationMapper {
                 .weight(medicationDto.getWeight())
                 .code(medicationDto.getCode())
                 .imagePath(medicationDto.getImagePath())
+                .isDelivered(false)
                 .build();
     }
 

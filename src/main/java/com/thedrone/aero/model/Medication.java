@@ -20,6 +20,9 @@ public class Medication {
     private String code;
     private String imagePath;
 
+    @ColumnDefault(value="false")
+    private Boolean isDelivered;
+
     @ManyToOne
     @JoinColumn(name = "drone_id", referencedColumnName = "droneId")
     private Drone drone;

@@ -63,7 +63,7 @@ public class LoadMedicationServiceImpl implements LoadMedicationService {
             if (currentWeight < 0) {
                 throw new RuntimeException("Exceed weight limit. Available is only " + drone.getWeightLimit());
             }
-            if (medication.getDrone() != null) {
+            if (medication.getDrone() != null || medication.getIsDelivered()) {
                 alreadyLoadedMedList.add(medication.getMedicationId());
             } else {
                 medication.setDrone(drone);

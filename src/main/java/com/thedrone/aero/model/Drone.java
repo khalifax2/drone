@@ -30,7 +30,7 @@ public class Drone {
     @Enumerated(EnumType.STRING)
     private State state;
 
-    @OneToMany(mappedBy = "drone", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "drone", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Medication> medications;
 
 }
