@@ -4,13 +4,18 @@
 Drone delivery system.
 
 ## Installation
-git clone https://github.com/username/repository.git
+git clone https://github.com/khalifax2/drone.git
 
 open folder in IDE (Intellij)
 
 ## Default Database Initialization
 
 When the application starts, it will automatically run the following SQL scripts to populate the `drone` and `medication` tables with default data.
+
+## H2 console
+url: http://localhost:8080/api/v1/h2-console
+
+jdbc-url: jdbc:h2:mem:dronedb
 
 ### SQL Scripts
 
@@ -45,10 +50,6 @@ INSERT INTO medication (medication_id, code, image_path, name, weight, drone_id)
 
 # API Documentation
 
-## Medication API
-
-The Medication API provides endpoints to manage medications in the application. It supports adding single or multiple medications.
-
 ### Base URL
 /api/v1
 
@@ -59,7 +60,7 @@ The Medication API provides endpoints to manage medications in the application. 
 - **URL**: `/api/v1/medication/add`
 - **Method**: `POST`
 - **Request Body**: `MedicationDto`
-- **Description**: Adds a new medication to the system.
+- **Description**: Add a new medication to the system.
 
 **Request Format**:
 ```json
@@ -223,9 +224,9 @@ Response Body: "Drone is available for loading."
 
 **Validation**:
 ```aidl
-- Scheduler will not start if:
+- Scheduler will not start if and will throw an error:
     - Specified drone already running.
-    - Specified drone is state is not "LOADED"
+    - Specified drone state is not "LOADED"
     - Specified drone battery level is below 25%
 ```
 
